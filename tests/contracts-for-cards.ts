@@ -6,7 +6,8 @@ describe("contracts-for-cards", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.ContractsForCards as Program<ContractsForCards>;
+  const program = anchor.workspace
+    .ContractsForCards as Program<ContractsForCards>;
 
   it("is Initialized", async () => {
     // Add your test here.
