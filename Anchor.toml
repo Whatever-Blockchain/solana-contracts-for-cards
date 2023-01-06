@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "programs/contracts-for-cards",
+    "programs/escrow",
 ]
 
 [features]
@@ -9,6 +10,7 @@ skip-lint = false
 
 [programs.localnet]
 contracts_for_cards = "VT4xECAJb32gNheoLxYJnJksW4WxTgYW4v6A2Y2sYYv"
+escrow = "5K8XyZfcTir7V57zbYrYRrLZmYMKkc7jjX6wGz1TT8eD"
 
 [registry]
 url = "https://api.apr.dev"
