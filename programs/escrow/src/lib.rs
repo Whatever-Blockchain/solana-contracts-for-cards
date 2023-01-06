@@ -22,7 +22,7 @@ pub mod escrow {
         ctx: Context<Initialize>,
         _valut_acccount_bump: u8,
         initializer_amount: u64,
-        taker_amount: u64,
+           taker_amount: u64,
     ) -> ProgramResult {
         initialize::handle(ctx, _valut_acccount_bump, initializer_amount, taker_amount)
     }
