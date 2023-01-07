@@ -3,48 +3,47 @@ import { Program } from "@project-serum/anchor";
 import { Counter } from "../target/types/counter";
 
 describe("Counter Contract", () => {
-    const provider = anchor.AnchorProvider.env();
-    anchor.setProvider(provider);
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
 
-    const program = anchor.workspace.Counter as Program<Counter>;
+  const program = anchor.workspace.Counter as Program<Counter>;
 
-    let counterAccountPubkey;
+  let counterAccountPubkey;
 
-    it("Initialize count", async () => {
-        const counterAccountKeyPair = anchor.web3.Keypair.generate();
-        
-        await program.methods
-            .initialize()
-            .accounts({
-                counterAccount: counterAccountKeyPair.publicKey,
-                user: provider.wallet.publicKey,
-                systemProgram: anchor.web3.SystemProgram.programId,
-            })
-            .signers([counterAccountKeyPair])
-            .rpc();
+  it("Initialize count", async () => {
+    const counterAccountKeyPair = anchor.web3.Keypair.generate();
 
-        counterAccountPubkey = counterAccountKeyPair.publicKey;
+    await program.methods
+      .initialize()
+      .accounts({
+        counterAccount: counterAccountKeyPair.publicKey,
+        user: provider.wallet.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId,
+      })
+      .signers([counterAccountKeyPair])
+      .rpc();
 
-        const account = await program.account.counterAccount.fetch(
-            counterAccountPubkey
-        );
+    counterAccountPubkey = counterAccountKeyPair.publicKey;
 
-        console.log("Initial count: ", account.count.toString());
-    });
+    const account = await program.account.counterAccount.fetch(
+      counterAccountPubkey
+    );
 
-    it("Increment count", async () => {
-        await program.methods
-            .increment()
-            .accounts({
-                counterAccount: counterAccountPubkey,
-            })
-            .rpc();
+    console.log("Initial count: ", account.count.toString());
+  });
 
-        const account = await program.account.counterAccount.fetch(
-            counterAccountPubkey
-        );
+  it("Increment count", async () => {
+    await program.methods
+      .increment()
+      .accounts({
+        counterAccount: counterAccountPubkey,
+      })
+      .rpc();
 
-        console.log("Current count: ", account.count.toString());
-    });
+    const account = await program.account.counterAccount.fetch(
+      counterAccountPubkey
+    );
 
+    console.log("Current count: ", account.count.toString());
+  });
 });

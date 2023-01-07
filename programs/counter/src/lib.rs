@@ -34,7 +34,6 @@ pub struct Increment<'info> {
     pub counter_account: Account<'info, CounterAccount>,
 }
 
-
 #[account]
 pub struct CounterAccount {
     pub count: u64,
