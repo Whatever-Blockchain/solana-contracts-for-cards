@@ -2,6 +2,7 @@
 members = [
     "programs/contracts-for-cards",
     "programs/escrow",
+    "programs/counter",
 ]
 
 [features]
@@ -11,6 +12,7 @@ skip-lint = false
 [programs.localnet]
 contracts_for_cards = "VT4xECAJb32gNheoLxYJnJksW4WxTgYW4v6A2Y2sYYv"
 escrow = "5K8XyZfcTir7V57zbYrYRrLZmYMKkc7jjX6wGz1TT8eD"
+counter = "GHiMm9tjXW9Ynh927EgovMgp5cA9hpbxPYpEYq6hyo2p"
 
 [registry]
 url = "https://api.apr.dev"
