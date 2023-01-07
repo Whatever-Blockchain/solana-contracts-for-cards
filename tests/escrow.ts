@@ -16,8 +16,7 @@ import {
 } from "@solana/spl-token";
 import { assert } from "chai";
 
-describe("anchor-escrow", () => {
-  // Configure the client to use the local cluster.
+describe("escrow contract", () => {
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
 

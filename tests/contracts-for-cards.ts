@@ -2,9 +2,9 @@ import * as anchor from "@project-serum/anchor";
 import { Program } from "@project-serum/anchor";
 import { ContractsForCards } from "../target/types/contracts_for_cards";
 
-describe("contracts-for-cards", () => {
-  // Configure the client to use the local cluster.
-  anchor.setProvider(anchor.AnchorProvider.env());
+describe("contracts-for-cards contract", () => {
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
 
   const program = anchor.workspace
     .ContractsForCards as Program<ContractsForCards>;
