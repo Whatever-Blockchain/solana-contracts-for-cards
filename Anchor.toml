@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "programs/contracts-for-cards",
+    "programs/hello-solana",
     "programs/escrow",
     "programs/counter",
 ]
@@ -10,7 +10,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-contracts_for_cards = "VT4xECAJb32gNheoLxYJnJksW4WxTgYW4v6A2Y2sYYv"
+hello-solana = "VT4xECAJb32gNheoLxYJnJksW4WxTgYW4v6A2Y2sYYv"
 escrow = "5K8XyZfcTir7V57zbYrYRrLZmYMKkc7jjX6wGz1TT8eD"
 counter = "GHiMm9tjXW9Ynh927EgovMgp5cA9hpbxPYpEYq6hyo2p"
 
